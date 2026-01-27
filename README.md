@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BFIT - Discipline Meets Transformation
+
+BFIT is a full-stack fitness tracking application built with Next.js, Tailwind CSS, and MongoDB.
+
+## Features
+
+- **User Dashboard**: Track daily calories, workouts, and consistency.
+- **Workout Tracking**: Log varied workouts (Cardio, Strength, etc.) with calorie calculations.
+- **Diet Tracking**: Log meals and track macros (Proteins, Carbs, Fats).
+- **NutriScan AI**: Mock AI feature to analyze food nutrition from text input.
+- **Progress Visualization**: Chart your weight loss/gain journey over time.
+- **Secure Authentication**: JWT-based auth with password hashing.
+
+## Tech Stack
+
+- **Frontend**: Next.js 15 (App Router), React, Tailwind CSS, Lucide Icons, Recharts
+- **Backend**: Next.js API Routes (Serverless)
+- **Database**: MongoDB (via Mongoose)
+- **Authentication**: Custom JWT (JSON Web Tokens)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js installed.
+- MongoDB installed locally or a MongoDB Atlas connection string.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1.  **Clone/Navigate** to the project directory:
+    ```bash
+    cd Bfit
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2.  **Install Dependencies**:
+    ```bash
+    npm install
+    ```
 
-## Learn More
+3.  **Environment Setup**:
+    Create a `.env.local` file in the root if it doesn't exist, and add:
+    ```env
+    MONGODB_URI=mongodb://localhost:27017/bfit
+    JWT_SECRET=your_super_secure_secret_key
+    ```
+    *Replace the URI with your MongoDB Atlas string if using cloud database.*
 
-To learn more about Next.js, take a look at the following resources:
+4.  **Run Development Server**:
+    ```bash
+    npm run dev
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5.  **Access the App**:
+    Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+- `app/`: Next.js App Router pages and API routes.
+  - `(auth)/`: Login and Signup pages.
+  - `(dashboard)/`: Protected user pages (Dashboard, Workouts, etc.).
+  - `api/`: Backend endpoints.
+- `components/`: Reusable UI components (Sidebar, NutriScan, etc.).
+- `context/`: React Context (AuthState).
+- `lib/`: Utilities (Database connection, Auth helpers).
+- `models/`: Mongoose Database Models.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## NutriScan Usage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Go to the NutriScan page and type a food name (e.g., "Chicken Breast", "Pizza", "Apple"). The system will return Estimated Macro-nutrients which you can add to your daily diet log.
+
+---
+Built for the Future of Fitness.

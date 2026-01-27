@@ -36,7 +36,7 @@ export default function LandingPage() {
             🚀 The Future of Fitness Tracking
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-6 drop-shadow-2xl">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-6 drop-shadow-2xl px-2">
             WHERE DISCIPLINE <br className="hidden md:block" />
             MEETS <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500">TRANSFORMATION</span>
           </h1>

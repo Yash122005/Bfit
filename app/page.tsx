@@ -154,7 +154,7 @@ export default function LandingPage() {
           </div>
 
           {/* MOCK UI Container */}
-          <div className="relative mx-auto max-w-4xl bg-gray-950 border border-gray-800 rounded-3xl shadow-2xl p-4 md:p-8 transform rotate-1 hover:rotate-0 transition-transform duration-500">
+          <div className="relative mx-auto max-w-4xl bg-gray-950 border border-gray-800 rounded-3xl shadow-2xl p-4 md:p-8 transform md:rotate-1 md:hover:rotate-0 transition-transform duration-500">
             {/* Fake Browser Header */}
             <div className="flex items-center space-x-2 mb-6 border-b border-gray-800 pb-4">
               <div className="w-3 h-3 rounded-full bg-red-500" />

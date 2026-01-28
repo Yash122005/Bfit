@@ -80,7 +80,8 @@ const TrainerCard: React.FC<TrainerCardProps> = ({
                 </div>
 
                 {/* Hover Action */}
-                <div className="mt-4 translate-y-8 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                {/* Hover Action - Visible by default on mobile/tablet, hover-reveal on desktop */}
+                <div className="mt-4 translate-y-0 opacity-100 lg:translate-y-8 lg:opacity-0 transition-all duration-300 lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
                     <Link
                         href={`/trainers/${id}`}
                         className="flex w-full items-center justify-center gap-2 rounded-lg bg-emerald-600 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-500"
@@ -90,8 +91,8 @@ const TrainerCard: React.FC<TrainerCardProps> = ({
                 </div>
             </div>
 
-            {/* Spacer to push content down initially, creating the hover reveal effect better */}
-            <div className="h-12 group-hover:hidden" />
+            {/* Spacer to push content down initially, creating the hover reveal effect better on desktop */}
+            <div className="h-12 hidden lg:block lg:group-hover:hidden" />
         </div>
     );
 };

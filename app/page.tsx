@@ -290,8 +290,17 @@ export default function LandingPage() {
 
 
       {/* FOOTER */}
-      <footer className="py-8 border-t border-gray-900 bg-black text-center text-gray-600 text-sm">
-        <div className="flex flex-col items-center gap-4">
+      <footer className="py-12 border-t border-gray-900 bg-black text-center text-gray-600 text-sm">
+        <div className="flex flex-col items-center gap-6">
+          <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-gray-800 hover:border-blue-500 transition-colors shadow-lg shadow-blue-900/10">
+            <Image
+              src="/logo.png"
+              alt="BFIT Logo"
+              fill
+              className="object-cover"
+            />
+          </div>
+
           <div className="flex items-center gap-6">
             <a href="https://www.instagram.com/bfits_tayfit/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-pink-500 transition-colors">
               <Instagram className="w-6 h-6" />

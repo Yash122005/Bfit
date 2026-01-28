@@ -1,17 +1,26 @@
 "use client";
 import { useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
 import { Loader2 } from 'lucide-react';
+import { useEffect } from 'react';
 
 export default function LoginPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const { login } = useAuth();
+    const { login, user } = useAuth();
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const redirectUrl = searchParams.get('redirect');
+
+    useEffect(() => {
+        if (user) {
+            router.push(redirectUrl || '/dashboard');
+        }
+    }, [user, router, redirectUrl]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -31,7 +40,7 @@ export default function LoginPage() {
                 throw new Error(data.error || 'Login failed');
             }
 
-            login(data.token, data.user);
+            login(data.token, data.user, redirectUrl || undefined);
         } catch (err: any) {
             setError(err.message);
         } finally {

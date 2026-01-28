@@ -9,7 +9,8 @@ import {
   Dumbbell,
   Utensils,
   Scan,
-  CheckCircle2
+  CheckCircle2,
+  Instagram
 } from 'lucide-react';
 
 export default function LandingPage() {
@@ -47,10 +48,11 @@ export default function LandingPage() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/signup"
-              className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold text-lg transition-all transform hover:scale-105 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] flex items-center justify-center"
+              href="/login?redirect=/trainers"
+              className="w-full sm:w-auto px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-full font-bold text-lg transition-all transform hover:scale-105 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] flex items-center justify-center gap-2 group"
             >
-              Start Your Journey
+              <Dumbbell className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+              Find a Trainer
             </Link>
             <Link
               href="/login"
@@ -288,8 +290,15 @@ export default function LandingPage() {
 
 
       {/* FOOTER */}
-      <footer className="py-8 border-t border-gray-900 text-center text-gray-600 text-sm">
-        <p>© {new Date().getFullYear()} BFIT. All rights reserved.</p>
+      <footer className="py-8 border-t border-gray-900 bg-black text-center text-gray-600 text-sm">
+        <div className="flex flex-col items-center gap-4">
+          <div className="flex items-center gap-6">
+            <a href="https://www.instagram.com/bfits_tayfit/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-pink-500 transition-colors">
+              <Instagram className="w-6 h-6" />
+            </a>
+          </div>
+          <p>© {new Date().getFullYear()} BFIT. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   );

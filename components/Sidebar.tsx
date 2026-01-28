@@ -21,6 +21,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         { name: 'Progress', href: '/progress', icon: TrendingUp },
         { name: 'NutriScan', href: '/nutriscan', icon: Scan },
         { name: 'Profile', href: '/profile', icon: User },
+        { name: 'Trainers', href: '/trainers', icon: User },
     ];
 
     return (

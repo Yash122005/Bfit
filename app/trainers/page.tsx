@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import TrainerCard from '@/components/TrainerCard';
-import { Search, Filter, Dumbbell } from 'lucide-react';
+import { Search, Filter, Dumbbell, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
 interface Trainer {
@@ -68,6 +68,15 @@ export default function TrainersPage() {
                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-zinc-900/50 to-transparent" />
 
+                {/* Back to Dashboard Button */}
+                <Link
+                    href="/dashboard"
+                    className="absolute top-6 left-4 md:left-8 z-20 flex items-center gap-2 px-4 py-2 rounded-full bg-black/40 hover:bg-zinc-800/80 backdrop-blur-md text-zinc-200 hover:text-white transition-all border border-white/5 hover:border-emerald-500/30 group"
+                >
+                    <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+                    <span className="text-sm font-medium">Dashboard</span>
+                </Link>
+
                 <div className="container relative mx-auto px-4 text-center">
                     <div className="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 mb-6 backdrop-blur-sm">
                         <span className="relative flex h-2 w-2">
@@ -119,8 +128,8 @@ export default function TrainersPage() {
                                     key={spec}
                                     onClick={() => setFilterSpec(spec)}
                                     className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${filterSpec === spec
-                                            ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/20'
-                                            : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700 hover:text-white'
+                                        ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/20'
+                                        : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700 hover:text-white'
                                         }`}
                                 >
                                     {spec}

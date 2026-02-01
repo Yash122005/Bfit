@@ -38,6 +38,9 @@ export async function POST(req: Request) {
             name: user.name,
             email: user.email,
             fitnessGoal: user.fitnessGoal,
+            age: user.age,
+            height: user.height,
+            weight: user.weight,
         };
 
         return NextResponse.json({

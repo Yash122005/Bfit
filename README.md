@@ -40,8 +40,8 @@ BFIT is a full-stack fitness tracking application built with Next.js, Tailwind C
 3.  **Environment Setup**:
     Create a `.env.local` file in the root if it doesn't exist, and add:
     ```env
-    MONGODB_URI=mongodb://localhost:27017/bfit
-    JWT_SECRET=your_super_secure_secret_key
+    MONGODB_URI=NAHI BATAUNGA
+    JWT_SECRET=YE BHI NAHI BATAUNGA
     ```
     *Replace the URI with your MongoDB Atlas string if using cloud database.*
 
